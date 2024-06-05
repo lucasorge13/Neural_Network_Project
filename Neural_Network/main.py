@@ -4,7 +4,8 @@ from nnfs.datasets import spiral_data
 from Activation_ReLU import Activation_ReLU
 from Layer_Dense import Layer_Dense
 from Activation_Softmax import Activation_Softmax
-from Neural_Network.Loss_CategoricalCrossentropy import Loss_CategoricalCrossentropy
+from Loss_CategoricalCrossentropy import Loss_CategoricalCrossentropy
+
 
 
 nnfs.init()
