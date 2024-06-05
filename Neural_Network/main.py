@@ -4,6 +4,8 @@ from nnfs.datasets import spiral_data
 from Activation_ReLU import Activation_ReLU
 from Layer_Dense import Layer_Dense
 from Activation_Softmax import Activation_Softmax
+from Neural_Network.Loss_CategoricalCrossentropy import Loss_CategoricalCrossentropy
+
 
 nnfs.init()
 
@@ -22,3 +24,9 @@ dense2.forward(Activation1.output)
 Activation2.forward(dense2.output)
 
 print(Activation2.output[:5])
+
+loss_function = Loss_CategoricalCrossentropy()
+
+loss = loss_function.calculate(Activation2.output, y)
+
+print("Loss:", loss)

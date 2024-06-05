@@ -3,3 +3,5 @@ Neural_Network/__pycache__/Activation_Softmax.cpython-311.pyc
 Neural_Network/__pycache__/Activation_ReLU.cpython-311.pyc
 
 Neural_Network/__pycache__/Layer_Dense.cpython-311.pyc
+Neural_Network/__pycache__/Loss_CategoricalCrossentropy.cpython-311.pyc
+Neural_Network/__pycache__/Loss.cpython-311.pyc
