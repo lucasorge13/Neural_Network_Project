@@ -3,21 +3,22 @@ import nnfs
 from nnfs.datasets import spiral_data
 from Activation_ReLU import Activation_ReLU
 from Layer_Dense import Layer_Dense
+from Activation_Softmax import Activation_Softmax
 
 nnfs.init()
 
-#input data for the sample network
-X = [[1, 2, 3, 2.5],
-      [2.0, 5.0, -1.0, 2.0],
-      [-1.5, 2.7, 3.3, -0.8]]
+X, y = spiral_data(samples=100, classes=3)
 
-X, y = spiral_data(100, 3)
+dense1 = Layer_Dense(2, 3)
+Activation1 = Activation_ReLU()
 
+dense2 = Layer_Dense(3, 3)
+Activation2 = Activation_Softmax()
 
-layer1 = Layer_Dense(2, 5)
-activation1 = Activation_ReLU()
+dense1.forward(X)
+Activation1.forward(dense1.output)
 
-layer1.forward(X)
+dense2.forward(Activation1.output)
+Activation2.forward(dense2.output)
 
-activation1.forward(layer1.output)
-print(activation1.output)
+print(Activation2.output[:5])
